@@ -1,0 +1,248 @@
+html,
+body {
+    background-color: black;
+    color: white;
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: rgba($color: #ffffff, $alpha: 0.25);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_left, .header_right{
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        & > li {
+            & > a{
+                color: #fff;
+                text-decoration: none;
+                font-size: 25px;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom .25s;
+
+                &:hover{
+                    border-bottom: 2px solid #fff;
+                }
+            }
+        }
+    }
+
+    .header_left{
+        & > li {
+            padding: 10px 0 0 20px;
+        }
+    }
+
+    .header_right{
+        & > li {
+            padding: 10px 20px 0 0;
+        }
+    }
+
+    .header_logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* main_visual */
+
+.main_visual {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    &>video {
+        width: 100%;
+        position: absolute;
+    }
+
+    .app_link {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .app_icon {
+            width: 200px;
+            height: 200px;
+            border-radius: 25px;
+            margin: 0 0 100px;
+            border: 2px solid rgb(212, 212, 212);
+        }
+
+        .app_url {
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.catchphrase {
+    text-align: center;
+    margin: 150px 0 200px;
+    font-size: 25px;
+}
+
+/* section */
+section {
+    margin: 100px 0;
+
+    .section-headline {
+        font-size: 70px;
+    }
+}
+
+.sub_visual {
+    position: relative;
+
+    .sub_visual_image {
+        // width: 100%;
+
+        &>img {
+            width: 100%;
+        }
+    }
+
+    &>.section-headline {
+        position: absolute;
+        background-color: rgba($color: #333, $alpha: 0.5);
+        padding: 10px 30px;
+        border-radius: 10px;
+        color: #fff;
+
+        &.section-headline-left {
+            top: 0;
+            left: 0;
+            margin: 50px 0 0 50px;
+        }
+
+        &.section-headline-center {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 50px 0 0 0;
+        }
+
+        &.section-headline-right {
+            top: 0;
+            right: 0;
+            margin: 50px 50px 0 0;
+        }
+    }
+}
+
+/* pv */
+.pv {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+
+    .section-headline {
+        margin: 0 0 100px;
+    }
+
+    .movie {
+        border: 2px solid #fff;
+    }
+}
+
+/* content */
+.content {
+
+    .section-headline {
+        text-align: center;
+        margin: 0 0 100px;
+    }
+
+    .swiper {
+        width: 75%;
+        border: 5px solid #fff;
+
+        .swiper-wrapper {
+            /* wrapperのサイズを調整 */
+            width: 100%;
+            padding: 30px 30px;
+
+            .swiper-slide {
+                /* スライドのサイズを調整、中身のテキスト配置調整、背景色 */
+                text-align: center;
+
+                &>img {
+                    border: 2px solid #333;
+                }
+            }
+        }
+
+        .swiper-button-prev {
+            color: #fff;
+        }
+
+        .swiper-button-next {
+            color: #fff;
+        }
+    }
+}
+
+
+
+
+/*
+footer
+*/
+footer {
+    margin-top: 300px;
+
+    display: flex;
+    justify-content: space-between;
+
+    .sns_icon {
+        margin: 30px 50px;
+
+        a {
+            margin-right: 30px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .twitter_icon::before {
+            content: '\f099';
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: 400;
+            padding-right: 5px;
+        }
+
+        .instagram_icon::before {
+            content: '\f16d';
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: 400;
+            padding-right: 5px;
+        }
+
+        .tiktok_icon::before {
+            content: '\e07b';
+            font-family: 'Font Awesome 5 Brands';
+            font-weight: 400;
+            padding-right: 5px;
+        }
+    }
+
+    .copyright {
+        margin: 30px 50px;
+    }
+}

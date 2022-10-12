@@ -1,0 +1,232 @@
+html,
+body {
+    background-color: rgb(255, 255, 255);
+    color: white;
+}
+
+.scrollHide {
+    overflow: hidden;
+}
+
+.load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 1);
+    z-index: 100;
+    display: block;
+
+    img {
+        width: 200px;
+        height: 200px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -ms-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        display: none;
+    }
+}
+
+header {
+    height: 80px;
+    width: 100%;
+    background-color: rgba($color: #333, $alpha: 0.5);
+    position: fixed;
+    top: 0;
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header_left,
+    .header_right {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+
+        &>li {
+            &>a {
+                color: #fff;
+                text-decoration: none;
+                font-size: 25px;
+                border-bottom: 2px solid transparent;
+                transition: border-bottom .25s;
+
+                &:hover {
+                    border-bottom: 2px solid #fff;
+                }
+            }
+        }
+    }
+
+    .header_left {
+        &>li {
+            padding: 10px 0 0 20px;
+        }
+    }
+
+    .header_right {
+        &>li {
+            padding: 10px 20px 0 0;
+        }
+    }
+
+    .header_logo {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.contents {
+    .content {
+        width: 100%;
+        // height: calc(100vh - 30px);
+        height: 100vh;
+        position: relative;
+
+        background-color: #000;
+
+        picture>img {
+            width: 1920px;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+
+        .app_detail {
+
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            bottom: 10%;
+            right: 10%;
+            transform: translate(-10%, -10%);
+
+            .app_logo {
+                width: 600px;
+                height: 250px;
+            }
+
+            .app_icon {
+                width: 200px;
+                height: 200px;
+                border-radius: 25px;
+                margin: 80px 0;
+                border: 2px solid rgb(212, 212, 212);
+            }
+
+            .app_url {
+                .app_explanation {
+                    margin: 80px 0;
+                    background-color: #333;
+                    border: 5px solid #fff;
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 30px 70px;
+                    border-radius: 10px;
+                    font-size: 40px;
+                    white-space: nowrap;
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+// slick customs
+.slick-dots {
+    bottom: 30px;
+
+    &>li {
+        margin: 0 4px;
+        width: 70px;
+        height: 5px;
+
+        &>button:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            background: #e2e2e2;
+            opacity: 1;
+            border: 1px solid #fff;
+            transform: rotate(45deg);
+        }
+    }
+}
+
+.slick-dotted.slick-slider {
+    margin-bottom: 0;
+}
+
+.slick-dots li.slick-active button:before {
+    background: #333;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+
+        .header_left,
+        .header_right {
+            &>li {
+                &>a {
+                    font-size: 15px;
+                }
+            }
+        }
+    }
+
+    .contents {
+        .content {
+            picture>img {
+                width: 80%;
+                margin: auto;
+            }
+
+            .app_detail {
+                bottom: 10%;
+                left: 50%;
+                transform: translate(-50%, -10%);
+
+                .app_logo {
+                    display: none;
+                }
+
+                .app_icon {
+                    width: 150px;
+                    height: 150px;
+                }
+
+                .app_url {
+                    .app_explanation {
+                        padding: 15px 50px;
+                        border-radius: 10px;
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+
+        .header_left,
+        .header_right {
+            &>li {
+                &>a {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        .header_logo {
+            width: 35px;
+            height: 35px;
+        }
+    }
+}
